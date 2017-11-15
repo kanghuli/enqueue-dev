@@ -19,7 +19,7 @@ matrix:
       env: SYMFONY_VERSION=3.0.* UNIT_TESTS=true
     - php: 7.0
       env: SYMFONY_VERSION=3.0.* UNIT_TESTS=true
-    - php: 7.0
+    - php: 7.1
       env: SYMFONY_VERSION=v4.0.0-BETA4 UNIT_TESTS=true
     - php: 7.1
       services: docker
