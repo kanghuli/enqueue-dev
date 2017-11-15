@@ -1,7 +1,7 @@
 {
   "name": "enqueue/enqueue-dev",
   "type": "project",
-  "minimum-stability": "stable",
+  "minimum-stability": "beta",
   "require": {
     "php": ">=5.6",
     "enqueue/enqueue": "*@dev",
