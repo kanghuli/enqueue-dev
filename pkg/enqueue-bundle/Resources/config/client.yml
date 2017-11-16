@@ -5,6 +5,7 @@ services:
 
     Enqueue\Client\Producer:
         class: 'Enqueue\Client\Producer'
+        public: true
         arguments:
             - '@enqueue.client.driver'
             - '@enqueue.client.rpc_factory'
@@ -24,6 +25,7 @@ services:
 
     Enqueue\Client\SpoolProducer:
         class: 'Enqueue\Client\SpoolProducer'
+        public: true
         arguments:
             - '@Enqueue\Client\Producer'
 
@@ -140,6 +142,7 @@ services:
 
     Enqueue\Symfony\Client\Meta\TopicsCommand:
         class: 'Enqueue\Symfony\Client\Meta\TopicsCommand'
+        public: true
         arguments:
             - '@Enqueue\Client\Meta\TopicMetaRegistry'
         tags:
@@ -151,6 +154,7 @@ services:
 
     Enqueue\Symfony\Client\Meta\QueuesCommand:
         class: 'Enqueue\Symfony\Client\Meta\QueuesCommand'
+        public: true
         arguments:
             - '@Enqueue\Client\Meta\QueueMetaRegistry'
         tags:
@@ -182,6 +186,7 @@ services:
 
     Enqueue\Symfony\Client\FlushSpoolProducerListener:
         class: 'Enqueue\Symfony\Client\FlushSpoolProducerListener'
+        public: true
         arguments:
             - '@Enqueue\Client\SpoolProducer'
         tags:

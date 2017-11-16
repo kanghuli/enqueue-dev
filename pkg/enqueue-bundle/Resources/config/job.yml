@@ -4,6 +4,7 @@ parameters:
 services:
     Enqueue\JobQueue\Doctrine\JobStorage:
         class: 'Enqueue\JobQueue\Doctrine\JobStorage'
+        public: true
         arguments:
             - '@doctrine'
             - 'Enqueue\JobQueue\Doctrine\Entity\Job'
@@ -15,6 +16,7 @@ services:
 
     Enqueue\JobQueue\JobProcessor:
         class: 'Enqueue\JobQueue\JobProcessor'
+        public: true
         arguments:
             - '@Enqueue\JobQueue\Doctrine\JobStorage'
             - '@Enqueue\Client\Producer'
@@ -25,6 +27,7 @@ services:
 
     Enqueue\JobQueue\JobRunner:
         class: 'Enqueue\JobQueue\JobRunner'
+        public: true
         arguments:
             - '@Enqueue\JobQueue\JobProcessor'
 
@@ -34,6 +37,7 @@ services:
 
     Enqueue\JobQueue\CalculateRootJobStatusService:
         class: 'Enqueue\JobQueue\CalculateRootJobStatusService'
+        public: true
         arguments:
             - '@Enqueue\JobQueue\Doctrine\JobStorage'
 
@@ -43,6 +47,7 @@ services:
 
     Enqueue\JobQueue\CalculateRootJobStatusProcessor:
         class: 'Enqueue\JobQueue\CalculateRootJobStatusProcessor'
+        public: true
         arguments:
             - '@Enqueue\JobQueue\Doctrine\JobStorage'
             - '@Enqueue\JobQueue\CalculateRootJobStatusService'
@@ -57,6 +62,7 @@ services:
 
     Enqueue\JobQueue\DependentJobProcessor:
         class: 'Enqueue\JobQueue\DependentJobProcessor'
+        public: true
         arguments:
             - '@Enqueue\JobQueue\Doctrine\JobStorage'
             - '@Enqueue\Client\Producer'
@@ -70,6 +76,7 @@ services:
 
     Enqueue\JobQueue\DependentJobService:
         class: 'Enqueue\JobQueue\DependentJobService'
+        public: true
         arguments:
             - '@Enqueue\JobQueue\Doctrine\JobStorage'
 

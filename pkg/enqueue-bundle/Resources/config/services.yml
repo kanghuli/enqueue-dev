@@ -7,6 +7,7 @@ services:
 
     Enqueue\Consumption\QueueConsumer:
         class: 'Enqueue\Consumption\QueueConsumer'
+        public: true
         arguments:
             - '@enqueue.transport.context'
             - '@enqueue.consumption.extensions'
@@ -19,6 +20,7 @@ services:
 
     Enqueue\Symfony\Consumption\ContainerAwareConsumeMessagesCommand:
         class: 'Enqueue\Symfony\Consumption\ContainerAwareConsumeMessagesCommand'
+        public: true
         arguments:
             - '@Enqueue\Consumption\QueueConsumer'
         tags:
@@ -36,6 +38,7 @@ services:
 
     Enqueue\Rpc\RpcClient:
         class: 'Enqueue\Rpc\RpcClient'
+        public: true
         arguments:
             - '@enqueue.transport.context'
             - '@enqueue.transport.rpc_factory'
