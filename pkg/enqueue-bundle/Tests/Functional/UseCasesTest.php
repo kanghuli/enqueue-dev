@@ -39,11 +39,11 @@ class UseCasesTest extends WebTestCase
                 'default' => 'amqp',
                 'amqp' => [
                     'driver' => 'ext',
-                    'host' => getenv('SYMFONY__RABBITMQ__HOST'),
-                    'port' => getenv('SYMFONY__RABBITMQ__AMQP__PORT'),
-                    'user' => getenv('SYMFONY__RABBITMQ__USER'),
-                    'pass' => getenv('SYMFONY__RABBITMQ__PASSWORD'),
-                    'vhost' => getenv('SYMFONY__RABBITMQ__VHOST'),
+                    'host' => getenv('RABBITMQ_HOST'),
+                    'port' => getenv('RABBITMQ_AMQP__PORT'),
+                    'user' => getenv('RABBITMQ_USER'),
+                    'pass' => getenv('RABBITMQ_PASSWORD'),
+                    'vhost' => getenv('RABBITMQ_VHOST'),
                     'lazy' => false,
                 ],
             ],
@@ -94,11 +94,11 @@ class UseCasesTest extends WebTestCase
             'transport' => [
                 'default' => 'stomp',
                 'stomp' => [
-                    'host' => getenv('SYMFONY__RABBITMQ__HOST'),
-                    'port' => getenv('SYMFONY__RABBITMQ__STOMP__PORT'),
-                    'login' => getenv('SYMFONY__RABBITMQ__USER'),
-                    'password' => getenv('SYMFONY__RABBITMQ__PASSWORD'),
-                    'vhost' => getenv('SYMFONY__RABBITMQ__VHOST'),
+                    'host' => getenv('RABBITMQ_HOST'),
+                    'port' => getenv('﻿RABBITMQ_STOMP_PORT'),
+                    'login' => getenv('RABBITMQ_USER'),
+                    'password' => getenv('RABBITMQ_PASSWORD'),
+                    'vhost' => getenv('RABBITMQ_VHOST'),
                     'lazy' => false,
                 ],
             ],
@@ -108,8 +108,8 @@ class UseCasesTest extends WebTestCase
             'transport' => [
                 'default' => 'redis',
                 'redis' => [
-                    'host' => getenv('SYMFONY__REDIS__HOST'),
-                    'port' => (int) getenv('SYMFONY__REDIS__PORT'),
+                    'host' => getenv('REDIS_HOST'),
+                    'port' => (int) getenv('REDIS_PORT'),
                     'vendor' => 'predis',
                     'lazy' => false,
                 ],
@@ -120,8 +120,8 @@ class UseCasesTest extends WebTestCase
             'transport' => [
                 'default' => 'redis',
                 'redis' => [
-                    'host' => getenv('SYMFONY__REDIS__HOST'),
-                    'port' => (int) getenv('SYMFONY__REDIS__PORT'),
+                    'host' => getenv('REDIS_HOST'),
+                    'port' => (int) getenv('REDIS_PORT'),
                     'vendor' => 'phpredis',
                     'lazy' => false,
                 ],
@@ -155,12 +155,12 @@ class UseCasesTest extends WebTestCase
                 'default' => 'dbal',
                 'dbal' => [
                     'connection' => [
-                        'dbname' => getenv('SYMFONY__DB__NAME'),
-                        'user' => getenv('SYMFONY__DB__USER'),
-                        'password' => getenv('SYMFONY__DB__PASSWORD'),
-                        'host' => getenv('SYMFONY__DB__HOST'),
-                        'port' => getenv('SYMFONY__DB__PORT'),
-                        'driver' => getenv('SYMFONY__DB__DRIVER'),
+                        'dbname' => getenv('DOCTRINE_DB_NAME'),
+                        'user' => getenv('DOCTRINE_USER'),
+                        'password' => getenv('DOCTRINE_PASSWORD'),
+                        'host' => getenv('DOCTRINE_HOST'),
+                        'port' => getenv('DOCTRINE_PORT'),
+                        'driver' => getenv('DOCTRINE_DRIVER'),
                     ],
                 ],
             ],
@@ -177,9 +177,9 @@ class UseCasesTest extends WebTestCase
             'transport' => [
                 'default' => 'sqs',
                 'sqs' => [
-                    'key' => getenv('AWS__SQS__KEY'),
-                    'secret' => getenv('AWS__SQS__SECRET'),
-                    'region' => getenv('AWS__SQS__REGION'),
+                    'key' => getenv('AWS_SQS_KEY'),
+                    'secret' => getenv('AWS_SQS_SECRET'),
+                    'region' => getenv('AWS_SQS_REGION'),
                 ],
             ],
         ]];
