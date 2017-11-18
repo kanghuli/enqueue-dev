@@ -40,7 +40,8 @@
     "symfony/event-dispatcher": "^2.8|^3|^4",
     "symfony/console": "^2.8|^3|^4",
     "friendsofphp/php-cs-fixer": "^2",
-    "empi89/php-amqp-stubs": "*@dev"
+    "empi89/php-amqp-stubs": "*@dev",
+    "php-http/client-common": "^1.7@dev"
   },
   "autoload": {
     "files": [
