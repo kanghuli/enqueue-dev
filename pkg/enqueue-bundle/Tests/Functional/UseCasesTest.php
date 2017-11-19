@@ -329,13 +329,12 @@ class UseCasesTest extends WebTestCase
         $driver = $this->container->get('enqueue.client.driver');
         $context = $this->getPsrContext();
 
-        $queue = $driver->createQueue('test');
+        $driver->setupBroker();
 
+        $queue = $driver->createQueue('test');
         if (method_exists($context, 'purgeQueue')) {
             $context->purgeQueue($queue);
         }
-
-        $driver->setupBroker();
     }
 
     /**
