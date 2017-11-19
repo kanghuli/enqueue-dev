@@ -331,11 +331,8 @@ class UseCasesTest extends WebTestCase
 
         $queue = $driver->createQueue('test');
 
-        //guard
-        $this->assertEquals('enqueue.test', $queue->getQueueName());
-
-        if (method_exists($context, 'deleteQueue')) {
-            $context->deleteQueue($queue);
+        if (method_exists($context, 'purgeQueue')) {
+            $context->purgeQueue($queue);
         }
 
         $driver->setupBroker();
