@@ -12,6 +12,7 @@ services:
 
     # Deprecated. To be removed in 0.10.
     enqueue.job.storage:
+        public: true
         alias: 'Enqueue\JobQueue\Doctrine\JobStorage'
 
     Enqueue\JobQueue\JobProcessor:
@@ -23,6 +24,7 @@ services:
 
     # Deprecated. To be removed in 0.10.
     enqueue.job.processor:
+        public: true
         alias: 'Enqueue\JobQueue\JobProcessor'
 
     Enqueue\JobQueue\JobRunner:
@@ -33,6 +35,7 @@ services:
 
     # Deprecated. To be removed in 0.10.
     enqueue.job.runner:
+        public: true
         alias: 'Enqueue\JobQueue\JobRunner'
 
     Enqueue\JobQueue\CalculateRootJobStatusService:
@@ -43,6 +46,7 @@ services:
 
     # Deprecated. To be removed in 0.10.
     enqueue.job.calculate_root_job_status_service:
+        public: true
         alias: 'Enqueue\JobQueue\CalculateRootJobStatusService'
 
     Enqueue\JobQueue\CalculateRootJobStatusProcessor:
@@ -58,6 +62,7 @@ services:
 
     # Deprecated. To be removed in 0.10.
     enqueue.job.calculate_root_job_status_processor:
+        public: true
         alias: 'Enqueue\JobQueue\CalculateRootJobStatusProcessor'
 
     Enqueue\JobQueue\DependentJobProcessor:
@@ -72,6 +77,7 @@ services:
 
     # Deprecated. To be removed in 0.10.
     enqueue.job.dependent_job_processor:
+        public: true
         alias: 'Enqueue\JobQueue\DependentJobProcessor'
 
     Enqueue\JobQueue\DependentJobService:
@@ -82,4 +88,5 @@ services:
 
     # Deprecated. To be removed in 0.10.
     enqueue.job.dependent_job_service:
+        public: true
         alias: 'Enqueue\JobQueue\DependentJobService'
