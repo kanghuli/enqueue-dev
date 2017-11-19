@@ -18,6 +18,7 @@ use Enqueue\Symfony\TransportFactoryInterface;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\NodeInterface;
 use Symfony\Component\Config\Definition\Processor;
+use Symfony\Component\DependencyInjection\Alias;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Reference;
@@ -100,7 +101,7 @@ class SimpleClientContainerExtension extends Extension
                 new Reference('enqueue.client.rpc_factory'),
         ]);
 
-        $container->setAlias('enqueue.client.producer_v2', 'enqueue.client.producer');
+        $container->setAlias('enqueue.client.producer_v2', new Alias('enqueue.client.producer', true));
 
         $container->register('enqueue.client.meta.topic_meta_registry', TopicMetaRegistry::class)
             ->setArguments([[]]);
